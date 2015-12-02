@@ -17,6 +17,9 @@
 #         under the License.
 -->
 
+##Edits from North
+Changed the plugin download to automatically follow re-directs.
+
 # cordova-plugin-file-transfer
 
 This plugin allows you to upload and download files.
