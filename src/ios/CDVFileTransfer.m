@@ -722,6 +722,20 @@ static CFIndex WriteDataToStream(NSData* data, CFWriteStreamRef stream)
     }
 }
 
+- (NSURLRequest *)connection:(NSURLConnection*)connection
+    willSendRequest:(NSURLRequest *)request 
+    redirectResponse:(NSURLResponse *)redirectResponse
+{
+
+    NSURLRequest *newRequest = request;
+
+    if (redirectResponse) {
+        newRequest = redirectResponse;
+    }
+
+    return newRequest;
+}
+
 - (void)connection:(NSURLConnection*)connection didFailWithError:(NSError*)error
 {
     NSString* body = [[NSString alloc] initWithData:self.responseData encoding:NSUTF8StringEncoding];
